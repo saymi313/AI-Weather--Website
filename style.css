@@ -1,0 +1,332 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #74b9ff;
+    display: flex;
+    height: 100vh;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    width: 100%;
+    padding: 20px;
+    gap: 10px;
+}
+
+.sidebar {
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    box-shadow: -5px 5px 15px rgba(5, 5, 5, 0.5);
+}
+
+.logo {
+    width: 96px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.btn {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid black;
+    background-color: #3498db;
+    color: white;
+    text-align: center;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.btn a {
+    text-decoration: none;
+    color: white;
+}
+
+.content {
+    background: #fff;
+    background-color: rgb(124, 200, 255);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    box-shadow: 5px 5px 15px rgba(5, 5, 5, 0.5);
+}
+
+.profile-menu {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.search-bar {
+    display: flex;
+    margin-top: 80px;
+    width: 50%;
+}
+
+.search-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid black;
+    border-right: none;
+    border-radius: 8px 0 0 8px;
+}
+
+.search-btn {
+    background-color: #3498db;
+    padding: 10px;
+    border: 1px solid #3498db;
+    border-radius: 0 8px 8px 0;
+    cursor: pointer;
+}
+
+.search-btn i {
+    color: white;
+}
+
+.weather-data {
+    width: calc(100% - 80px);
+    padding: 20px;
+    background-color: #3498db;
+    margin: 20px auto;
+    color: white;
+    text-align: center;
+}
+
+.forecast-cards {
+    width: calc(100% - 40px);
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #e0f7fa;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 10px;
+    flex: 1 1 calc(20% - 20px);
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.card h4 {
+    margin: 10px 0;
+}
+
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    color: #3498db;
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        margin-bottom: 20px;
+    }
+
+    .content {
+        padding: 15px;
+    }
+
+    .search-bar {
+        width: 80%;
+        margin-top: 60px;
+    }
+
+    .weather-data {
+        width: calc(100% - 40px);
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .card {
+        flex: 1 1 calc(100% - 20px);
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .container {
+        grid-template-columns: 1fr 3fr;
+    }
+
+    .search-bar {
+        width: 70%;
+    }
+
+    .weather-data {
+        width: calc(100% - 60px);
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .search-bar {
+        width: 50%;
+    }
+
+    .weather-data {
+        width: calc(100% - 80px);
+    }
+}
+
+.forecast-card {
+    border: 1px solid #3498db;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 8px;
+    text-align: center;
+    background-color: #f8f8f8;
+    width: calc(20% - 40px); 
+}
+
+.forecast-card h3 {
+    margin: 0;
+}
+
+.forecast-card p {
+    margin: 5px 0;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 2%;
+    margin-top: 10px;
+}
+
+.loader {
+    display: none;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    position: absolute;
+    left: 50%;
+    top: 35%;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(180deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#filterOptions {
+    width: 15%;
+    padding: 5px;
+    font-size: 16px;
+    border: 2px solid #3498db;
+    border-radius: 5px;
+    background-color: #ffffff;
+    color: #333333;
+    transition: border-color 0.3s;
+    cursor: pointer;
+}
+
+#filterOptions:focus {
+    outline: none;
+    border-color: #2980b9;
+}
+
+#filterOptions option {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #ffffff;
+    color: #333333;
+    cursor: pointer;
+}
+
+#filterOptions option:hover {
+    background-color: #3498db;
+    color: #ffffff;
+}
+
+.pagination-btn {
+    display: inline-block;
+    padding: 10px 15px;
+    margin: 0 5px;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #3498db;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.pagination-btn:hover {
+    transform: scale(1.1);
+    background-color: #2980b9;
+}
+
+.pagination-btn:disabled {
+    background-color: #bdc3c7;
+    cursor: not-allowed;
+    transform: scale(1);
+}
+
+.search-loc {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.location {
+    display: inline-block;
+    padding: 10px 15px;
+    margin: 0 5px;
+    margin-top: 8%;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #3498db;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.location:hover {
+    transform: scale(1.1);
+    background-color: #2980b9;
+}

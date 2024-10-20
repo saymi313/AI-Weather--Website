@@ -1,0 +1,30 @@
+.charts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    width: 100%;
+}
+
+.chart-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid gray;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+canvas {
+    max-width: 100%;
+    max-height: 300px;
+}
+
+.forecast-item {
+    border: 1px solid #3498db;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 8px;
+    text-align: center;
+    background-color: #000000;
+}

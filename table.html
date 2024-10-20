@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather-App</title>
+  <link rel="stylesheet" href="table.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+  <div class="container">
+    <div class="sidebar">
+      <img src="wLogo.png" alt="Logo" class="logo">
+      <button class="btn" onclick="location.href='./index.html'">Dashboard</button>
+      <button class="btn">Table</button>
+    </div>
+    
+    <div class="content">
+      <div class="profile-menu">
+        <img src="profile-pic.jpeg" alt="Profile Picture" class="profile-pic">
+      </div>
+
+      <div class="search-loc">
+        <div class="search-bar">
+          <input type="text" placeholder="Search your city" class="search-input" id="cityInput">
+          <button class="search-btn" id="searchBtn">
+            <i class="fa fa-search"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="forecast-table" id="forecastTable">
+        <h2>5-Day Temperature Forecast</h2>
+        <select id="filterOptions" class="filter-options">
+          <option value="none">Sort</option>
+          <option value="asc">Ascending</option>
+          <option value="desc">Descending</option>
+          <option value="rainy">Rainy Days</option>
+        </select>
+        <table>
+          <thead>
+            <tr>
+              <th>Date & Time</th>
+              <th>Temperature (°C)</th>
+              <th>Condition</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody">
+          
+          </tbody>
+        </table>
+        <div class="pagination" id="pagination" style="display: none;">
+          <button id="prevPage" class="pagination-btn">Previous</button>
+          <button id="nextPage" class="pagination-btn">Next</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="chatbot-container">
+    <div class="chatbot-header">Chatbot</div>
+    <div class="chatbot-messages" id="chatbotMessages"></div>
+    <textarea id="userInput" placeholder="Ask me about the weather..."></textarea>
+    <button id="sendMessage" class="btn">Send</button>
+  </div>
+  
+  <script type="importmap">
+    {
+      "imports": {
+        "@google/generative-ai": "https://esm.run/@google/generative-ai"
+      }
+    }
+  </script>
+  <script type="module" src="chatbot.js" defer></script>
+  <script src="table.js" defer></script>
+</body>
+</html>

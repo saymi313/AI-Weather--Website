@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather-App</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="chart.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+  <div class="container">
+    <div class="sidebar">
+      <img src="wLogo.png" alt="Logo" class="logo">
+      <button class="btn" >Dashboard</button> 
+      <button class="btn" onclick="location.href='./table.html'">Table</button>
+    </div>
+    
+    <div class="content">
+      <div class="profile-menu">
+        <img src="profile-pic.jpeg" alt="Profile Picture" class="profile-pic">
+      </div>
+
+      <div class="search-loc">
+      <div class="search-bar">
+        <input type="text" placeholder="Search your city" class="search-input" id="cityInput">
+        <button class="search-btn" id="searchBtn">
+          <i class="fa fa-search"></i>
+        </button>
+       
+      </div>
+      
+    </div>
+      <div class="weather-data" id="weatherData">
+        <h2>Weather Data</h2>
+        <div id="loader" class="loader" style="display: none;"></div>
+        <div id="currentFilters" class="current-filters"></div>
+      </div>
+
+      <div class="forecast-cards" id="forecastCards">
+        <h2>5-Day Temperature Forecast</h2>
+        <select id="filterOptions" class="filter-options" style="display: none;">
+          <option value="">Sort</option>
+          <option value="asc">Ascending</option>
+          <option value="desc">Descending</option>
+          <option value="rainy">Rainy Days</option>
+        </select>
+        <div class="cards-container" id="cardsContainer">
+         
+        </div>
+        <div class="pagination" id="pagination">
+          <button id="prevPage" class="pagination-btn">Previous</button>
+          <button id="nextPage" class="pagination-btn">Next</button>
+        </div>
+      </div>
+
+      <div class="charts">
+        <div class="chart-item">
+          <canvas id="verticalChart"></canvas>
+        </div>
+        <div class="chart-item">
+          <canvas id="doughnutChart"></canvas>
+        </div>
+        <div class="chart-item">
+          <canvas id="lineChart"></canvas>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="app.js"></script>
+  <script src="chart.js"></script>
+</body>
+</html>
